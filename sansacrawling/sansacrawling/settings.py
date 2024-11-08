@@ -12,6 +12,14 @@ BOT_NAME = "sansacrawling"
 SPIDER_MODULES = ["sansacrawling.spiders"]
 NEWSPIDER_MODULE = "sansacrawling.spiders"
 
+ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 1,
+    'sansacrawling.pipelines.CsvExportPipeline': 300,
+}
+
+# Set the directory where images will be stored
+IMAGES_STORE = 'images'
+LOG_LEVEL = 'DEBUG'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "sansacrawling (+http://www.yourdomain.com)"
